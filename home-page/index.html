@@ -44,7 +44,9 @@
     <nav class="nav">
       <input type="checkbox" id="click" />
       <div class="logo">
-        <img src="images/logo.png" alt="HexMart Logo" />
+        <a href="index.html"
+          ><img src="images/logo.png" alt="HexMart Logo"
+        /></a>
       </div>
       <label for="click" class="menu-btn">
         <i class="fa-solid fa-bars"></i>
@@ -53,7 +55,7 @@
         <li class="centre-list-items">
           <div class="location-dropdown">
             <span class="map-icon"
-              ><img src="/images/Map pin.png" alt=""
+              ><img src="images/Map pin.png" alt=""
             /></span>
             <select>
               <option value="bangalore">Bangalore, Karnataka</option>
@@ -84,16 +86,24 @@
     </nav>
 
     <section class="hero">
-      <div class="grid-container">
-        <div class="image-grid-item">
-          <img src="images/hero-1.png" alt="" />
+      <div class="banner">
+        <div class="image-slider-container">
+          <div class="slider-wrapper" id="image-slider">
+            <div class="slide slide-1">
+              <img src="images/hero-1.png" alt="Image 1" />
+            </div>
+            <div class="slide slide-2">
+              <img src="images/hero-2.png" alt="Image 1" />
+            </div>
+            <div class="slide slide-3">
+              <img src="images/hero-1.png" alt="Image 1" />
+            </div>
+            <div class="slide slide-4">
+              <img src="images/hero-2.png" alt="Image 1" />
+            </div>
+          </div>
         </div>
-        <div class="image-grid-item">
-          <img src="images/hero-2.png" alt="" class="hero-2" />
-        </div>
-      </div>
-      <div class="dot-navigation">
-        <img src="images/Group 8778.png" alt="" />
+        <div class="dots-container" id="dots-container"></div>
       </div>
     </section>
 
@@ -101,45 +111,92 @@
       <div class="category-section">
         <div class="category-container">
           <div class="category-card">
-            <img
-              src="images/yummy-cake-table-removebg-preview 2.png"
-              alt="Lorem ipsum"
-            />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
           <div class="category-card">
-            <img src="images/chicken.png" alt="Lorem ipsum" />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
           <div class="category-card">
-            <img src="images/vegetables.png" alt="Lorem ipsum" />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
           <div class="category-card">
-            <img src="images/juices.png" alt="Lorem ipsum" />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
           <div class="category-card">
-            <img src="images/spices.png" alt="Lorem ipsum" />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
           <div class="category-card">
-            <img
-              src="images/dairy-products-milk-cheese-cottage-cheese-eggs-yogurt 2.png"
-              alt="Lorem ipsum"
-            />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
           <div class="category-card">
-            <img src="images/diapers.png" alt="Lorem ipsum" />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
           <div class="category-card">
-            <img
-              src="images/collection-makeup-products.png"
-              alt="Lorem ipsum"
-            />
-            <p class="category-title">Lorem ipsum</p>
+            <div class="category-image">
+              <img
+                src="images/yummy-cake-table-removebg-preview 2.png"
+                alt="Lorem ipsum"
+              />
+            </div>
+            <div class="category-title">
+              <p class="hover-underline-animation left">Cake & Bakery</p>
+            </div>
           </div>
         </div>
         <div class="view-all-button">
@@ -624,5 +681,6 @@
         <p>© 2025, All rights reserved</p>
       </div>
     </footer>
+    <script src="script.js" type="text/javascript"></script>
   </body>
 </html>
