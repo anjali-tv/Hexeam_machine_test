@@ -107,6 +107,10 @@ li.centre-list-items {
   height: 32px;
   cursor: pointer;
 }
+#cart-icon,
+#whishlist-icon {
+  cursor: pointer;
+}
 
 .button {
   display: inline-flex;
@@ -147,25 +151,60 @@ li.centre-list-items {
 }
 
 .hero {
-  margin: 20px 40px;
+  margin: 15px 40px;
 }
-.hero .grid-container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 20px;
+.image-slider-container {
+  position: relative;
+  width: 100%; /* Adjust the width as needed */
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #edeef0;
 }
 
-.grid-container .grid-item img {
-  height: 408px;
-  object-fit: cover;
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
 }
-.hero-2 {
-  width: 562px;
-}
-.dot-navigation {
+
+.slide {
+  flex: 0 0 55%; /* Adjust to show 4 images at a time */
+  box-sizing: border-box;
+  /* padding: 10px; */
   text-align: center;
-  padding-top: 15px;
+}
+
+.slide img {
+  width: 100%;
+  height: 400px;
+}
+.slide.slide-2 img,
+.slide.slide-4 img {
+  object-fit: contain !important;
+}
+.dots-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  margin: 5px;
+  background-color: lightgray;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.dot.active {
+  background-color: #306400;
+  border-radius: 6px;
+  width: 32px;
+  box-shadow: 0px 0px 5px 0px #ffc0c040 inset;
 }
 
 .category-section {
@@ -177,14 +216,13 @@ li.centre-list-items {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   gap: 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   margin-bottom: 30px;
 }
 
 .category-container .category-card {
-  padding: 29px 12px;
-  background: var(--card-color);
-  border-radius: 20px;
+  /* transition: transform 0.3s ease; */
+  cursor: pointer;
 }
 
 .category-container .category-card img {
@@ -192,8 +230,13 @@ li.centre-list-items {
   height: 97px;
   object-fit: contain;
 }
+.category-container .category-card .category-image {
+  padding: 29px 12px;
+  background: var(--card-color);
+  border-radius: 20px;
+}
 
-.category-container .category-card .category-title {
+.category-container .category-card .category-title p {
   font-family: var(--text-font-family);
   font-size: 16px;
   font-weight: 600;
@@ -201,6 +244,38 @@ li.centre-list-items {
   letter-spacing: 0.01em;
   color: var(--text-color);
   margin-top: 15px;
+}
+/* .hover-underline-animation */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  border-radius: 18px 0px 0px 0px;
+  background-color: #00000080;
+  transition: transform 0.25s ease-out;
+}
+
+/* Add hover effect for the whole card */
+.category-card:hover .hover-underline-animation::after {
+  transform: scaleX(1);
+}
+
+/* Ensure the left hover animation works when hovering the entire card */
+.category-card:hover .hover-underline-animation.left::after {
+  transform-origin: bottom left;
+}
+
+.hover-underline-animation.left::after {
+  transform-origin: bottom right;
 }
 
 .view-all-button {
@@ -792,7 +867,17 @@ p.discount-text.save {
     height: 14px;
   }
 }
+
 @media (min-width: 768px) and (max-width: 1024px) {
+  .slide img {
+    width: 100%;
+    height: 200px !important;
+    object-fit: cover;
+  }
+  .slide.slide-1 img {
+    padding-right: 15px;
+  }
+
   #hot-and-special-text,
   #burger-text,
   #price-text,
@@ -905,6 +990,7 @@ p.discount-text.save {
   }
   .image-grid-item.second-column {
     gap: 20px !important;
+    margin-top: -20px;
   }
   .category-container {
     grid-template-columns: repeat(4, 2fr);
@@ -915,6 +1001,16 @@ p.discount-text.save {
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
+  .slide img {
+    height: 200px !important;
+    object-fit: cover;
+  }
+  .slide {
+    flex: 0 0 100% !important;
+  }
+  .hero {
+    margin: 15px 20px;
+  }
   #hot-and-special-text,
   #burger-text,
   #price-text,
@@ -1010,4 +1106,3 @@ p.discount-text.save {
     grid-template-columns: repeat(2, 2fr);
   }
 }
-
